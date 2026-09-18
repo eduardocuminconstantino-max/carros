@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AutoPrime - Encontre o carro ideal para você.">
+    <title>AutoPrime | Carros</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="container nav">
+            <a href="#" class="logo">
+                Auto<span>Prime</span>
+            </a>
+
+            <nav class="menu">
+                <a href="#inicio">Início</a>
+                <a href="#carros">Carros</a>
+                <a href="#sobre">Sobre</a>
+                <a href="#contato">Contato</a>
+            </nav>
+
+            <button class="menu-btn" id="menuBtn">☰</button>
+        </div>
+    </header>
+
+    <main>
+        <!-- HERO -->
+        <section class="hero" id="inicio">
+            <div class="container hero-content">
+                <div class="hero-text">
+                    <span class="tag">🚗 Seu próximo carro está aqui</span>
+
+                    <h1>
+                        Encontre o carro
+                        <span>dos seus sonhos.</span>
+                    </h1>
+
+                    <p>
+                        Explore nossa seleção de veículos novos e seminovos
+                        com qualidade, segurança e as melhores condições.
+                    </p>
+
+                    <a href="#carros" class="btn btn-primary">
+                        Ver carros
+                    </a>
+                </div>
+
+                <div class="hero-car">
+                    <div class="car-glow"></div>
+                    <div class="car-placeholder">
+                        <span>CARRO</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- BUSCA -->
+        <section class="search-section">
+            <div class="container search-box">
+                <div class="search-item">
+                    <label for="search">Pesquisar</label>
+                    <input
+                        type="text"
+                        id="search"
+                        placeholder="Ex: Civic, Corolla..."
+                    >
+                </div>
+
+                <div class="search-item">
+                    <label for="category">Categoria</label>
+                    <select id="category">
+                        <option value="todos">Todos</option>
+                        <option value="sedan">Sedan</option>
+                        <option value="suv">SUV</option>
+                        <option value="hatch">Hatch</option>
+                        <option value="pickup">Picape</option>
+                    </select>
+                </div>
+
+                <div class="search-item">
+                    <label for="price">Preço máximo</label>
+                    <select id="price">
+                        <option value="9999999">Qualquer preço</option>
+                        <option value="100000">R$ 100 mil</option>
+                        <option value="150000">R$ 150 mil</option>
+                        <option value="200000">R$ 200 mil</option>
+                        <option value="300000">R$ 300 mil</option>
+                    </select>
+                </div>
+
+                <button class="btn btn-primary search-btn" id="searchBtn">
+                    Buscar
+                </button>
+            </div>
+        </section>
+
+        <!-- CARROS -->
+        <section class="cars-section" id="carros">
+            <div class="container">
+                <div class="section-header">
+                    <div>
+                        <span class="section-tag">Nosso estoque</span>
+                        <h2>Carros em destaque</h2>
+                    </div>
+
+                    <span id="resultCount" class="result-count">
+                        6 veículos
+                    </span>
+                </div>
+
+                <div class="cars-grid" id="carsGrid">
+
+                    <article
+                        class="car-card"
+                        data-name="Honda Civic"
+                        data-category="sedan"
+                        data-price="189900"
+                    >
+                        <div class="car-image blue">
+                            <span class="car-label">2025</span>
+                            <div class="car-icon">🚘</div>
+                        </div>
+
+                        <div class="car-info">
+                            <span class="car-category">SEDAN</span>
+                            <h3>Honda Civic</h3>
+                            <p>2.0 e:HEV • Automático</p>
+
+                            <div class="car-footer">
+                                <strong>R$ 189.900</strong>
+                                <button class="details-btn" data-car="Honda Civic">
+                                    Detalhes
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article
+                        class="car-card"
+                        data-name="Toyota Corolla"
+                        data-category="sedan"
+                        data-price="164900"
+                    >
+                        <div class="car-image black">
+                            <span class="car-label">2025</span>
+                            <div class="car-icon">🚘</div>
+                        </div>
+
+                        <div class="car-info">
+                            <span class="car-category">SEDAN</span>
+                            <h3>Toyota Corolla</h3>
+                            <p>2.0 XEi • Automático</p>
+
+                            <div class="car-footer">
+                                <strong>R$ 164.900</strong>
+                                <button class="details-btn" data-car="Toyota Corolla">
+                                    Detalhes
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article
+                        class="car-card"
+                        data-name="Jeep Compass"
+                        data-category="suv"
+                        data-price="179990"
+                    >
+                        <div class="car-image orange">
+                            <span class="car-label">2025</span>
+                            <div class="car-icon">🚙</div>
+                        </div>
+
+                        <div class="car-info">
+                            <span class="car-category">SUV</span>
+                            <h3>Jeep Compass</h3>
+                            <p>1.3 Turbo • Automático</p>
+
+                            <div class="car-footer">
+                                <strong>R$ 179.990</strong>
+                                <button class="details-btn" data-car="Jeep Compass">
+                                    Detalhes
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article
+                        class="car-card"
+                        data-name="Volkswagen Golf"
+                        data-category="hatch"
+                        data-price="149900"
+                    >
+                        <div class="car-image gray">
+                            <span class="car-label">2024</span>
+                            <div class="car-icon">🚗</div>
+                        </div>
+
+                        <div class="car-info">
+                            <span class="car-category">HATCH</span>
+                            <h3>Volkswagen Golf</h3>
+                            <p>1.4 TSI • Automático</p>
+
+                            <div class="car-footer">
+                                <strong>R$ 149.900</strong>
+                                <button class="details-btn" data-car="Volkswagen Golf">
+                                    Detalhes
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article
+                        class="car-card"
+                        data-name="Ford Ranger"
+                        data-category="pickup"
+                        data-price="239900"
+                    >
+                        <div class="car-image green">
+                            <span class="car-label">2025</span>
+                            <div class="car-icon">🛻</div>
+                        </div>
+
+                        <div class="car-info">
+                            <span class="car-category">PICAPE</span>
+                            <h3>Ford Ranger</h3>
+                            <p>3.0 V6 • 4x4 Automática</p>
+
+                            <div class="car-footer">
+                                <strong>R$ 239.900</strong>
+                                <button class="details-btn" data-car="Ford Ranger">
+                                    Detalhes
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article
+                        class="car-card"
+                        data-name="Hyundai Creta"
+                        data-category="suv"
+                        data-price="139990"
+                    >
+                        <div class="car-image red">
+                            <span class="car-label">2024</span>
+                            <div class="car-icon">🚙</div>
+                        </div>
+
+                        <div class="car-info">
+                            <span class="car-category">SUV</span>
+                            <h3>Hyundai Creta</h3>
+                            <p>1.0 Turbo • Automático</p>
+
+                            <div class="car-footer">
+                                <strong>R$ 139.990</strong>
+                                <button class="details-btn" data-car="Hyundai Creta">
+                                    Detalhes
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                </div>
+
+                <p class="no-results" id="noResults">
+                    Nenhum veículo encontrado.
+                </p>
+            </div>
+        </section>
+
+        <!-- SOBRE -->
+        <section class="about" id="sobre">
+            <div class="container about-content">
+                <div>
+                    <span class="section-tag">Por que escolher a AutoPrime?</span>
+                    <h2>Mais que um carro.<br>Uma nova experiência.</h2>
+                </div>
+
+                <div class="features">
+                    <div class="feature">
+                        <span>✓</span>
+                        <div>
+                            <h3>Veículos revisados</h3>
+                            <p>Todos os carros passam por uma inspeção completa.</p>
+                        </div>
+                    </div>
+
+                    <div class="feature">
+                        <span>✓</span>
+                        <div>
+                            <h3>Compra segura</h3>
+                            <p>Processo transparente e seguro do início ao fim.</p>
+                        </div>
+                    </div>
+
+                    <div class="feature">
+                        <span>✓</span>
+                        <div>
+                            <h3>Financiamento</h3>
+                            <p>Condições flexíveis para você sair de carro novo.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTATO -->
+        <section class="contact" id="contato">
+            <div class="container contact-box">
+                <div>
+                    <span class="section-tag">Fale conosco</span>
+                    <h2>Encontrou seu próximo carro?</h2>
+                    <p>
+                        Entre em contato com nossa equipe e descubra todas
+                        as condições disponíveis.
+                    </p>
+                </div>
+
+                <a href="mailto:contato@autoprime.com" class="btn btn-light">
+                    Entrar em contato
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-content">
+            <a href="#" class="logo">
+                Auto<span>Prime</span>
+            </a>
+
+            <p>© 2025 AutoPrime. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- MODAL -->
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <button class="close-modal" id="closeModal">&times;</button>
+
+            <span class="section-tag">Detalhes do veículo</span>
+            <h2 id="modalTitle">Honda Civic</h2>
+
+            <div class="modal-car">🚘</div>
+
+            <div class="modal-details">
+                <div>
+                    <span>Ano</span>
+                    <strong>2025</strong>
+                </div>
+
+                <div>
+                    <span>Câmbio</span>
+                    <strong>Automático</strong>
+                </div>
+
+                <div>
+                    <span>Combustível</span>
+                    <strong>Flex</strong>
+                </div>
+
+                <div>
+                    <span>Quilometragem</span>
+                    <strong>0 km</strong>
+                </div>
+            </div>
+
+            <button class="btn btn-primary modal-contact">
+                Tenho interesse
+            </button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
